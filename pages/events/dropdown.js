@@ -70,14 +70,7 @@ function getDropdowns() {
 	for (var i = 0; i < dropdowns.length; i++) {
 		switch (dropdowns[i].id) {
 			case "repeatIntervalType":
-				convertToDropdownElement(dropdowns[i], [
-					"daily",
-					"weekly - every same day of the week",
-					"monthly - same day of the month",
-					"interval - every N days",
-					"interval - every N weeks",
-					"interval - every N Months on the same day of the month"
-				]);
+				convertToDropdownElement(dropdowns[i], budgetData.repeatEventOptions);
 				break;
 			case "calendarName":
 				if (budgetData.calendars !== undefined && Object.keys(budgetData.calendars).length > 0) {

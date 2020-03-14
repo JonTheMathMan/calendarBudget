@@ -40,10 +40,30 @@ function getCalendarEventViewer(eventOb) {
     var smallTable = document.createElement("table");
     var expandedTable = document.createElement("table");
     expandedTable.hidden = true;
+    
+    // add buttons
     var closeButton = document.createElement("button");
     closeButton.innerText = "Close";
     closeButton.hidden = true;
+    var editButton = document.createElement("button");
+    editButton.innerText = "Close";
+    editButton.hidden = true;
+    var duplicateButton = document.createElement("button");
+    duplicateButton.innerText = "Close";
+    duplicateButton.hidden = true;
+    var deleteButton = document.createElement("button");
+    deleteButton.innerText = "Close";
+    deleteButton.hidden = true;
 
+    // functions from changeExistingEvents.js
+    editButton.eventOb = eventOb;
+    duplicateButton.eventOb = eventOb;
+    deleteButton.eventOb = eventOb;
+    editButton.onclick = editEvent;
+    duplicateButton.onclick = duplicateEvent;
+    deleteButton.onclick = deleteEvent;
+
+    // table main color
     smallTable.style.color = "black";
     expandedTable.style.color = "black";
 
@@ -79,6 +99,9 @@ function getCalendarEventViewer(eventOb) {
         eventViewerBox.parentElement.style.boxShadow = "-3px 3px 5px";
         smallTable.hidden = true;
         closeButton.hidden = false;
+        editButton.hidden = false;      
+        duplicateButton.hidden = false;
+        deleteButton.hidden = false;
         expandedTable.hidden = false;
     }
     eventViewerBox.onclick = eventViewerBox.expand;
@@ -94,6 +117,9 @@ function getCalendarEventViewer(eventOb) {
         eventViewerBox.parentElement.style.boxShadow = "0px 0px 0px";
         expandedTable.hidden = true;
         closeButton.hidden = true;
+        editButton.hidden = true;
+        duplicateButton.hidden = true;
+        deleteButton.hidden = true;
         smallTable.hidden = false;
     }
     closeButton.onclick = eventViewerBox.collapse;

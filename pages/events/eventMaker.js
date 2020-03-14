@@ -113,4 +113,9 @@ function createCalendarEvent() {
 	if (calendarDaysOfMonthContainer.externalRefresh != undefined) {
 	  calendarDaysOfMonthContainer.externalRefresh();
 	}
+
+	// switch back to calendar page
+	document.getElementById("calendarPage").hidden = false;
+	document.getElementById("newEventPage").hidden = true;
+	selectedPage = "calendarPage";
 }

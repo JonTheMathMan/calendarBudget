@@ -21,6 +21,8 @@ var eventMakerHtml = `<div id="createEventContainer" style="background-color:#11
             <textarea class="createCalendarEvent" id="amount"></textarea>
             <p>Memo:</p>
             <textarea class="createCalendarEvent" id="memo"></textarea>
+            <p>Notes (For long notes that won't show on the unexpanded calendar):</p>
+            <textarea class="createCalendarEvent" id="notes"></textarea>
             <br/>
             <br/>
             <button onclick="createCalendarEvent()">Create Event</button>

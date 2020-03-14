@@ -1,5 +1,14 @@
 var budgetData = {};
 
+budgetData.repeatEventOptions = [
+  "daily",
+  "weekly - every same day of the week",
+  "monthly - same day of the month",
+  "interval - every N days",
+  "interval - every N weeks",
+  "interval - every N Months on the same day of the month"
+];
+
 function setLabelText(fileInputElement) {
   var labelElement = document.getElementById("fileFormLabel");
   if (!fileInputElement) {

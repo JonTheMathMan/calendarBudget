@@ -107,6 +107,8 @@ function getNewCalendarView(thisElement, fullSize = true) {
 
 		viewMonth.setDate(this.getDate());
 		document.getElementById("date").value = viewMonth.toDateString();
+
+		// switch to new event page
 		document.getElementById("calendarPage").hidden = true;
 		document.getElementById("newEventPage").hidden = false;
 		selectedPage = "newEventPage";
